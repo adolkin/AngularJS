@@ -1,0 +1,11 @@
+<div ng-controller="SidebarController" class="dashboardSidebar">
+	<ul dnd-list="models.lists.url" class="nav nav-pills nav-stacked">
+		<li ng-repeat="item in models.lists.url"
+			dnd-draggable="item"
+			dnd-moved="models.lists.url.splice($index, 1)"
+			dnd-effect-allowed="move"
+			dnd-selected="models.selected = item">
+			<a ui-sref="{{item.path}}">{{item.label}}</a>
+		</li>
+	</ul>
+</div>

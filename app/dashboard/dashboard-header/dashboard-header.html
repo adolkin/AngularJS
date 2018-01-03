@@ -1,0 +1,34 @@
+<nav class="navbar-default navbar-fixed-top dashboardHeader" ng-controller="DashboardHeaderController as Ctrl">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">DDDemo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav" dnd-list="models.lists.url">
+        <li class="navbarblock"
+          ng-repeat="item in models.lists.url"
+          dnd-draggable="item"
+          dnd-moved="models.lists.url.splice($index, 1)"
+          dnd-effect-allowed="move"
+          dnd-selected="models.selected = item">
+          <a ui-sref="{{item.path}}">
+              {{item.label}}
+          </a>           
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a>
+            <u ng-click="Ctrl.logout()">(logout)</u>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,17 @@
+<div>
+	<dashboard-header></dashboard-header>
+</div>
+
+<div class="container" ng-controller="DashboardController">
+	<div class="row content">
+		<div class="col-md-1 no-float sidenav">
+			<dashboard-sidebar isolated-expression-title="setTitle(newTitle)"></dashboard-sidebar>
+		</div>
+		<div class="col-md-11 no-float right-content">
+			<div class="header-content">{{title}}</div>
+			<div class="text-content">
+				<div ui-view></div>
+			</div>
+		</div>
+	</div>
+</div>

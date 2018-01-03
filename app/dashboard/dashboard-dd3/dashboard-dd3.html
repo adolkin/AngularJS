@@ -1,0 +1,28 @@
+<p>Drag and Drop Demo 3</p>
+
+<div class="simpleDemo" ng-controller="Ddd3Controller">
+
+  <ul dnd-list="models.lists.widgetsA" class="horizontal-list">
+    <li ng-repeat="item in models.lists.widgetsA"
+      dnd-draggable="item"
+      dnd-moved="models.lists.widgetsA.splice($index, 1)"
+      dnd-effect-allowed="move"
+      dnd-selected="models.selected = item"
+      ng-class="{'selected': models.selected === item}"
+      ng-style="item.color"
+      class="material-icons">         
+      {{item.label}}
+    </li>
+  </ul>
+
+  <ul dnd-list="models.lists.widgetsB" class="horizontal-list">
+    <li ng-repeat="item in models.lists.widgetsB"
+      dnd-draggable="item"
+      dnd-moved="models.lists.widgetsB.splice($index, 1)"
+      dnd-effect-allowed="move"
+      dnd-selected="models.selected = item"
+      ng-class="{'selected': models.selected === item}">
+      {{item.label}}
+    </li>
+  </ul>
+</div>

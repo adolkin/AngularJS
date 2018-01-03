@@ -1,0 +1,20 @@
+.dashboardHeader {
+  border-bottom: 2px solid black;
+  font-weight: bold;
+}
+
+.dashboardHeader ul[dnd-list] {
+  min-height: 42px;
+}
+
+.dashboardHeader ul[dnd-list] .dndDraggingSource {
+  display: none;
+}
+
+.dashboardHeader ul[dnd-list] .dndPlaceholder {
+  margin: 5px 0;
+  background-color: red;
+  border: 2px solid black;
+  min-height: 45px;
+  min-width: 55px;
+}
